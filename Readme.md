@@ -1,62 +1,71 @@
-# Lox Interpreter (from Crafting Interpreters)
-
-This project is a Java implementation of the **Lox programming language** from the book *[Crafting Interpreters by Robert Nystrom](https://craftinginterpreters.com/)*.
-
-It allows you to run `.lox` programs such as Fibonacci sequence, arithmetic, conditionals, and loops.
+# Lox Interpreter (Java)  
+A Java implementation of the [Lox programming language](https://craftinginterpreters.com/) from *Crafting Interpreters* by Robert Nystrom.
 
 ---
 
 ## 📦 Requirements
+
 - **Java JDK 11+** (tested with JDK 21)
-- **Git** for cloning
+- **Git** (for cloning the repository)
 
 ---
 
 ## 🚀 Setup
 
 ### 1. Clone the Repository
+
 ```bash
 git clone https://github.com/YOUR_USERNAME/lox-interpreter.git
 cd lox-interpreter
+```
 
+### 2. Build & Run
 
-2. Compile the Source
+Use the provided scripts to compile and run the interpreter.
 
-Use the provided run.bat (Windows) or run.sh (Linux/Mac) script to compile all Java sources into the out directory.
+#### Windows
 
-# Windows (PowerShell or CMD)
+```bash
 .\run.bat
+```
 
-# Linux / macOS
+#### Linux / macOS
+
+```bash
 bash run.sh
+```
 
-▶️ Running Programs
-Run the Lox REPL
+---
 
-You can start the interactive prompt:
+## ▶️ Usage
 
-# Windows
-.\run.bat
+### Start the REPL (Interactive Prompt)
 
-# Linux / macOS
-bash run.sh
+- **Windows:**  
+  `.\run.bat`
+- **Linux/macOS:**  
+  `bash run.sh`
 
+Type Lox code directly, for example:
 
-Then type:
-
+```lox
 print 1 + 2 * 3;
+```
 
-Run a .lox file
+### Run a `.lox` File
 
-Example with Fibonacci program:
+For example, to run the included Fibonacci program:
 
-# Windows
-.\run.bat fib.lox
+- **Windows:**  
+  `.\run.bat fib.lox`
+- **Linux/macOS:**  
+  `bash run.sh fib.lox`
 
-# Linux / macOS
-bash run.sh fib.lox
+---
 
-📂 Project Structure
+## 📂 Project Structure
+
+```
 com/
  └── craftinginterpreters/
       ├── lox/        # Interpreter source files
@@ -65,9 +74,14 @@ out/                  # Compiled .class files (created automatically)
 fib.lox               # Example Lox program (Fibonacci)
 run.bat               # Build & run script (Windows)
 run.sh                # Build & run script (Linux/macOS)
+```
 
-📝 Example Program
-fib.lox
+---
+
+## 📝 Example Program
+
+**fib.lox**
+```lox
 var a = 0;
 var temp;
 
@@ -76,15 +90,15 @@ for (var b = 1; a < 10000; b = temp + b) {
   temp = a;
   a = b;
 }
+```
 
-
-Run it:
-
+**Run it:**
+```bash
 .\run.bat fib.lox
+```
 
-
-Output:
-
+**Output:**
+```
 0
 1
 1
@@ -98,9 +112,14 @@ Output:
 2584
 4181
 6765
+```
 
-🔧 Helper Scripts
-1. run.bat (Windows)
+---
+
+## 🔧 Helper Scripts
+
+### run.bat (Windows)
+```bat
 @echo off
 REM Build and run Lox interpreter
 
@@ -113,8 +132,10 @@ if "%1"=="" (
 ) else (
   java -cp out com.craftinginterpreters.lox.Lox %1
 )
+```
 
-2. run.sh (Linux/macOS)
+### run.sh (Linux/macOS)
+```bash
 #!/bin/bash
 # Build and run Lox interpreter
 
@@ -127,8 +148,22 @@ if [ $# -eq 0 ]; then
 else
   java -cp out com.craftinginterpreters.lox.Lox "$1"
 fi
-
+```
 
 Make it executable:
-
+```bash
 chmod +x run.sh
+```
+
+---
+
+## 📖 Reference
+
+- [Crafting Interpreters Book](https://craftinginterpreters.com/)
+- [Lox Language Specification](https://craftinginterpreters.com/the-lox-language.html)
+
+---
+
+## 📝 License
+
+This project is for educational purposes, following the structure and code from *Crafting Interpreters* by Robert Nystrom.
